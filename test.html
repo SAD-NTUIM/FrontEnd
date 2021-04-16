@@ -30,6 +30,14 @@
             margin: 10px;
             display: inline-block;
         }
+        .text_box2 {
+            border: 3px solid grey;
+            border-radius:10px;
+            width: 100px;
+            padding: 10px;
+            margin: 10px;
+            margin-top: 50px;
+        }
         .circle {
             border: 3px solid grey;
             border-radius:50%;
@@ -38,6 +46,23 @@
             width: 30px;
             height: 30px;
             background-color: grey;
+        }
+        .pic {
+            height: 450px;
+            width: 500px;
+            border: 1px solid black;
+            display: inline-block;
+            margin-left: 100px;
+            position: relative;
+            bottom: -30px;
+        }
+        .btn {
+            border-radius:10px;
+            width: 130px;
+            padding: 10px;
+            margin: 10px;
+            margin-top: 50px;
+            margin-left: 50px;
         }
     </style>
     <script type="text/javascript">
@@ -63,9 +88,6 @@
                 style="border: 3px solid grey;font-size: 12px;padding: 10px;width: 100px;display: inline-block;height: 50px;margin-left: 50px;margin-top: 10px;border-radius:10px;">
                 Already adjusted <br>
                 to (79,0,0)
-            </div>
-            <!-- 圖片位置 -->
-            <div style="height: 500px;width: 500px;position: absolute;bottom: 70px;left: 35%;border: 1px solid black;">
             </div>
         </div> 
 
@@ -104,7 +126,39 @@
                 </div>
             </div>
         </div>
+        <!-- line 3 分左中右三大塊 -->
+        <div>
+            <!-- 左邊三塊 -->
+            <div style="display: inline-block;">
+                <div class="text_box2">
+                    Brand:__
+                </div>
+                <div class="text_box2">
+                    Product:__
+                </div>
+                <div class="text_box2">
+                    Shade:__
+                </div>
+            </div>
+            <!-- 中間圖片 -->
+            <div class="pic">
+            </div>
+            <!-- 右邊 3 按鈕 -->
+            <div style="display: inline-block;">
+                <div>
+                    <button type="button" class="btn">Redo by hand</button>
+                </div>
+                <div>
+                    <button type="button" class="btn">Save and import <br> next picture</button>
+                </div>
+                <div>
+                    <button type="button" class="btn">To excel</button>
+                </div>
+                
+            </div>
+        </div>
     </div>
+    
     
     
 </body>

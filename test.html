@@ -48,13 +48,12 @@
             background-color: grey;
         }
         .pic {
-            height: 450px;
+            /* height: 450px; */
             width: 500px;
-            border: 1px solid black;
+            /* border: 1px solid black; */
             display: inline-block;
             margin-left: 100px;
-            position: relative;
-            bottom: -30px;
+            vertical-align: top;
         }
         .btn {
             border-radius:10px;
@@ -66,11 +65,33 @@
         }
     </style>
     <script type="text/javascript">
+        var cvs, ctx, btn1;
+        function init(){
+            btn1 = document.getElementById("btn_1");
+            cvs=document.getElementById("cvs");//畫布
+            ctx=cvs.getContext("2d");//畫布內容
 
+            // 事件物件
+            var handler = function(e){
+                //var that = this;
+            }
+            btn1.addEventListener("click",handler);
+            
+        }
+        function loadfile(input){
+            var file= input.files[0];//獲取檔案
+            var src=URL.createObjectURL(file);//把檔案換成可用的網址
+            var img =new Image();
+            img.src =src;
+            img.onload=function(){ //載入影像
+                ctx.drawImage(this,0,0,450,450)
+            }
+
+        }
     </script>
 </head>
 
-<body>
+<body onload="init();">
     <div class="content">
         <!-- line 1 -->
         <div>
@@ -142,11 +163,13 @@
             </div>
             <!-- 中間圖片 -->
             <div class="pic">
+                <input type="file" onchange="loadfile(this);" />
+                <canvas id="cvs" width="450" height="450" style="border:1px solid black;"></canvas>
             </div>
             <!-- 右邊 3 按鈕 -->
             <div style="display: inline-block;">
                 <div>
-                    <button type="button" class="btn">Redo by hand</button>
+                    <button class="btn" id="btn_1">Redo by hand</button>
                 </div>
                 <div>
                     <button type="button" class="btn">Save and import <br> next picture</button>

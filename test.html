@@ -70,13 +70,11 @@
             btn1 = document.getElementById("btn_1");
             cvs=document.getElementById("cvs");//畫布
             ctx=cvs.getContext("2d");//畫布內容
-
             // 事件物件
             var handler = function(e){
                 //var that = this;
             }
-            btn1.addEventListener("click",handler);
-            
+            // btn1.addEventListener("click",handler);           
         }
         function loadfile(input){
             var file= input.files[0];//獲取檔案
@@ -85,8 +83,10 @@
             img.src =src;
             img.onload=function(){ //載入影像
                 ctx.drawImage(this,0,0,450,450)
-            }
-
+            }           
+        }
+        function clearall(){
+            cvs.height=cvs.height;
         }
     </script>
 </head>
@@ -164,6 +164,8 @@
             <!-- 中間圖片 -->
             <div class="pic">
                 <input type="file" onchange="loadfile(this);" />
+                <!-- <button id="btn_clear" onchange="init()">clear</button> -->
+                <input type="button" value="清除" onclick="clearall()"/>
                 <canvas id="cvs" width="450" height="450" style="border:1px solid black;"></canvas>
             </div>
             <!-- 右邊 3 按鈕 -->

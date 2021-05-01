@@ -13,14 +13,10 @@
             margin-right: auto;
         }
 
-        .box {
-            border: 2px solid grey;
-            border-radius:10px;
-            width: 60px;
-            padding: 10px;
-            margin: 10px;
+        .box { 
+            /* padding: 10px; */
+            margin: 5px;
             display: inline-block;
-            vertical-align: top;
         }
         .text_box { /* 最上文字 */
             /* border: 3px solid grey;
@@ -30,22 +26,22 @@
             margin: 30px;
             display: inline-block;
         }
-        .text_box2 { 
-            border: 3px solid grey;
-            border-radius:10px;
-            width: 100px;
+        .text_box2 { /* 中間文字 */
+            /* border: 3px solid grey; */
+            width: 45px;
             padding: 10px;
             margin: 10px;
-            margin-top: 50px;
         }
-        .circle {
+        .circle { /* 中間圓 */
             border: 3px solid grey;
             border-radius:50%;
             padding: 10px;
             margin: 10px;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             background-color: grey;
+            /* position: relative;
+            top: 20px; */
         }
         .pic {
             /* height: 450px; */
@@ -55,7 +51,7 @@
             margin-left: 100px;
             vertical-align: top;
         }
-        .btn {
+        .btn { /* 按鈕 */
             border-radius:10px;
             width: 130px;
             padding: 10px;
@@ -110,8 +106,93 @@
            <!-- 右邊3按鈕 -->            
             <button class="btn" id="btn_1">Select Tool</button>           
             <button class="btn">Save</button>                       
-            <button class="btn">Export and Clear</button>
-            
+            <button class="btn">Export and Clear</button>            
+       </div>
+
+       <!-- 第二條row，左右分開 -->      
+       <div style="position: relative;top: -30px;">
+           <!-- 左邊，按垂直分組 -->
+           <div style="width: 650px; display: inline-block; padding: 10px; margin: 10px;">
+             <!-- 文字 -->
+             <div style="display: inline-block;">
+                 <div style="padding: 10px;margin: 10px;position: relative;">
+                     Thickness:
+                 </div>
+                 <div style="padding: 10px;margin: 10px;">
+                     Click to </br>
+                     Select:
+                 </div>
+                 <div style="padding: 10px;margin: 10px;">
+                     RGB:
+                 </div>
+             </div>
+             <!-- circle 1 -->
+             <div class="box">
+                 <div class="text_box2"><u>float</u></div>
+                 <div class="circle"></div>
+                 <div class="text_box2"><u>float</u></div>
+             </div>
+             <!-- circle 2 -->
+             <div class="box">
+                <div class="text_box2"><u>float</u></div>
+                <div class="circle"></div>
+                <div class="text_box2"><u>float</u></div>
+             </div>
+             <!-- circle 3 -->
+             <div class="box">
+                <div class="text_box2"><u>float</u></div>
+                <div class="circle"></div>
+                <div class="text_box2"><u>float</u></div>
+             </div>
+             <!-- circle 4 -->
+             <div class="box">
+                <div class="text_box2"><u>float</u></div>
+                <div class="circle"></div>
+                <div class="text_box2"><u>float</u></div>
+             </div>
+             <!-- circle 5 -->
+             <div class="box">
+                <div class="text_box2"><u>float</u></div>
+                <div class="circle"></div>
+                <div class="text_box2"><u>float</u></div>
+             </div>           
+           </div>
+
+            <!-- 右邊，按垂直分組 -->
+            <div style="width: 560px; display: inline-block; padding: 10px; margin: 10px;">
+                <!-- circle 1 -->
+                <div class="box">
+                    <div class="text_box2"><u>float</u></div>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 2 -->
+                <div class="box">
+                    <div class="text_box2"><u>float</u></div>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 3 -->
+                <div class="box">
+                    <div class="text_box2"><u>float</u></div>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 4 -->
+                <div class="box">
+                    <div class="text_box2"><u>float</u></div>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 5 -->
+                <div class="box">
+                    <div class="text_box2"><u>float</u></div>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+
+           </div>
+
        </div>
 
 

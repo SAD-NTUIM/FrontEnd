@@ -21,9 +21,9 @@
         .text_box { /* 最上文字 */
             /* border: 3px solid grey;
             border-radius:10px; */
-            width: 120px;
+            width: 180px;
             padding: 10px;
-            margin: 30px;
+            margin: 10px;
             display: inline-block;
         }
         .text_box2 { /* 中間文字 */
@@ -42,14 +42,6 @@
             background-color: grey;
             /* position: relative;
             top: 20px; */
-        }
-        .pic {
-            /* height: 450px; */
-            width: 500px;
-            /* border: 1px solid black; */
-            display: inline-block;
-            margin-left: 100px;
-            vertical-align: top;
         }
         .btn { /* 按鈕 */
             border-radius:10px;
@@ -93,16 +85,17 @@
     <div class="content">  
         <!-- 第一條row -->
        <div>
-           <!-- 左邊3文字 -->
-            <div class="text_box">
-                Brand:<u>(String)</u>
-            </div>
-            <div class="text_box">
-                Product:<u>(String)</u>
-            </div>
-            <div class="text_box">
-                Shade:<u>(String)</u>
-            </div>
+           <!-- 左邊3文字 -->            
+            <form class="text_box">
+                <p style="font-size: larger;">Brand: <input type="text" name="brand_txt" size="10" /></p>
+            </form>
+            <form class="text_box">
+                <p style="font-size: larger;">Product: <input type="text" name="product_tex" size="10" /></p>
+            </form>
+            <form class="text_box">
+                <p style="font-size: larger;">Shade: <input type="text" name="shade_txt" size="10" /></p>
+            </form>
+           
            <!-- 右邊3按鈕 -->            
             <button class="btn" id="btn_1">Select Tool</button>           
             <button class="btn">Save</button>                       
@@ -210,7 +203,7 @@
            </div>
 
        </div>
-       
+
     </div>
     
     

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Direct</title>
+    <style type="text/css">
+        .content {
+            /*1300x700*/
+            width: 1300px;
+            border: 1px solid grey;
+            height: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .box {
+            border: 2px solid grey;
+            border-radius:10px;
+            width: 60px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .text_box { /* 最上文字 */
+            /* border: 3px solid grey;
+            border-radius:10px; */
+            width: 120px;
+            padding: 10px;
+            margin: 30px;
+            display: inline-block;
+        }
+        .text_box2 { 
+            border: 3px solid grey;
+            border-radius:10px;
+            width: 100px;
+            padding: 10px;
+            margin: 10px;
+            margin-top: 50px;
+        }
+        .circle {
+            border: 3px solid grey;
+            border-radius:50%;
+            padding: 10px;
+            margin: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: grey;
+        }
+        .pic {
+            /* height: 450px; */
+            width: 500px;
+            /* border: 1px solid black; */
+            display: inline-block;
+            margin-left: 100px;
+            vertical-align: top;
+        }
+        .btn {
+            border-radius:10px;
+            width: 130px;
+            padding: 10px;
+            margin: 30px;
+            /* margin-top: 50px;
+            margin-left: 50px; */
+            display: inline-block;
+        }
+    </style>
+    <script type="text/javascript">
+        var cvs, ctx, btn1;
+        function init(){
+            btn1 = document.getElementById("btn_1");
+            cvs=document.getElementById("cvs");//畫布
+            ctx=cvs.getContext("2d");//畫布內容
+            // 事件物件
+            var handler = function(e){
+                //var that = this;
+            }
+            // btn1.addEventListener("click",handler);           
+        }
+        function loadfile(input){
+            var file= input.files[0];//獲取檔案
+            var src=URL.createObjectURL(file);//把檔案換成可用的網址
+            var img =new Image();
+            img.src =src;
+            img.onload=function(){ //載入影像
+                ctx.drawImage(this,0,0,450,450)
+            }           
+        }
+        function clearall(){
+            cvs.height=cvs.height;
+        }
+    </script>
+</head>
+
+<body onload="init();">
+    <!-- 外框 -->
+    <div class="content">  
+        <!-- 第一條row -->
+       <div>
+           <!-- 左邊3文字 -->
+            <div class="text_box">
+                Brand:<u>(String)</u>
+            </div>
+            <div class="text_box">
+                Product:<u>(String)</u>
+            </div>
+            <div class="text_box">
+                Shade:<u>(String)</u>
+            </div>
+           <!-- 右邊3按鈕 -->            
+            <button class="btn" id="btn_1">Select Tool</button>           
+            <button class="btn">Save</button>                       
+            <button class="btn">Export and Clear</button>
+            
+       </div>
+
+
+
+
+
+    </div>
+    
+    
+    
+</body>
+
+</html>

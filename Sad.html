@@ -4,7 +4,7 @@
 <head>
     <title>AI Direct</title>
     <style type="text/css">
-        .content {
+        .content { /* 大外框 */
             /*1300x700*/
             width: 1300px;
             border: 1px solid grey;
@@ -13,7 +13,7 @@
             margin-right: auto;
         }
 
-        .box { 
+        .box { /* 中間小列 */
             /* padding: 10px; */
             margin: 5px;
             display: inline-block;
@@ -190,15 +190,27 @@
                     <div class="circle"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
+           </div>
+       </div>
 
+       <!-- 第三層，圖片 -->
+       <div style="position: relative;top: -50px;">
+           <!-- 左圖 -->
+           <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 100px;">
+                <label>Import Black One</label>
+                <input type="file" name="a11" onchange="loadfile(this);">   
+                <canvas id="cvs1" width="450" height="350" style="border:1px solid black;"></canvas>
+           </div>
+
+           <!-- 右圖 -->
+           <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 20px;">
+                <label>Import White One</label>
+                <input type="file" onchange="loadfile(this);" />
+                <canvas id="cvs" width="450" height="350" style="border:1px solid black;"></canvas>
            </div>
 
        </div>
-
-
-
-
-
+       
     </div>
     
     

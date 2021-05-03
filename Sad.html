@@ -54,24 +54,34 @@
         }
     </style>
     <script type="text/javascript">
-        var cvs, ctx, btn1;
+        var ctx1, ctx2, btn1;
         function init(){
             btn1 = document.getElementById("btn_1");
             cvs=document.getElementById("cvs");//畫布
-            ctx=cvs.getContext("2d");//畫布內容
+            ctx1=cvs1.getContext("2d");//畫布內容左
+            ctx2=cvs2.getContext("2d");//畫布內容左
             // 事件物件
             var handler = function(e){
                 //var that = this;
             }
             // btn1.addEventListener("click",handler);           
         }
-        function loadfile(input){
+        function loadfile1(input){
             var file= input.files[0];//獲取檔案
             var src=URL.createObjectURL(file);//把檔案換成可用的網址
             var img =new Image();
             img.src =src;
             img.onload=function(){ //載入影像
-                ctx.drawImage(this,0,0,450,450)
+                ctx1.drawImage(this,0,0,450,450)
+            }           
+        }
+        function loadfile2(input){
+            var file= input.files[0];//獲取檔案
+            var src=URL.createObjectURL(file);//把檔案換成可用的網址
+            var img =new Image();
+            img.src =src;
+            img.onload=function(){ //載入影像
+                ctx2.drawImage(this,0,0,450,450)
             }           
         }
         function clearall(){
@@ -121,31 +131,31 @@
              </div>
              <!-- circle 1 -->
              <div class="box">
-                 <div class="text_box2"><u>float</u></div>
+                 <form class="text_box2"><input type="text" name="c1_txt" size="5" /></form>
                  <div class="circle"></div>
                  <div class="text_box2"><u>float</u></div>
              </div>
              <!-- circle 2 -->
              <div class="box">
-                <div class="text_box2"><u>float</u></div>
+                <form class="text_box2"><input type="text" name="c2_txt" size="5" /></form>
                 <div class="circle"></div>
                 <div class="text_box2"><u>float</u></div>
              </div>
              <!-- circle 3 -->
              <div class="box">
-                <div class="text_box2"><u>float</u></div>
+                <form class="text_box2"><input type="text" name="c3_txt" size="5" /></form>
                 <div class="circle"></div>
                 <div class="text_box2"><u>float</u></div>
              </div>
              <!-- circle 4 -->
              <div class="box">
-                <div class="text_box2"><u>float</u></div>
+                <form class="text_box2"><input type="text" name="c4_txt" size="5" /></form>
                 <div class="circle"></div>
                 <div class="text_box2"><u>float</u></div>
              </div>
              <!-- circle 5 -->
              <div class="box">
-                <div class="text_box2"><u>float</u></div>
+                <form class="text_box2"><input type="text" name="c5_txt" size="5" /></form>
                 <div class="circle"></div>
                 <div class="text_box2"><u>float</u></div>
              </div>           
@@ -155,31 +165,31 @@
             <div style="width: 560px; display: inline-block; padding: 10px; margin: 10px;">
                 <!-- circle 1 -->
                 <div class="box">
-                    <div class="text_box2"><u>float</u></div>
+                    <form class="text_box2"><input type="text" name="c6_txt" size="5" /></form>
                     <div class="circle"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 2 -->
                 <div class="box">
-                    <div class="text_box2"><u>float</u></div>
+                    <form class="text_box2"><input type="text" name="c7_txt" size="5" /></form>
                     <div class="circle"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 3 -->
                 <div class="box">
-                    <div class="text_box2"><u>float</u></div>
+                    <form class="text_box2"><input type="text" name="c8_txt" size="5" /></form>
                     <div class="circle"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 4 -->
                 <div class="box">
-                    <div class="text_box2"><u>float</u></div>
+                    <form class="text_box2"><input type="text" name="c9_txt" size="5" /></form>
                     <div class="circle"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 5 -->
                 <div class="box">
-                    <div class="text_box2"><u>float</u></div>
+                    <form class="text_box2"><input type="text" name="c10_txt" size="5" /></form>
                     <div class="circle"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
@@ -191,15 +201,15 @@
            <!-- 左圖 -->
            <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 100px;">
                 <label>Import Black One</label>
-                <input type="file" name="a11" onchange="loadfile(this);">   
+                <input type="file" name="a11" onchange="loadfile1(this);">   
                 <canvas id="cvs1" width="450" height="350" style="border:1px solid black;"></canvas>
            </div>
 
            <!-- 右圖 -->
            <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 20px;">
                 <label>Import White One</label>
-                <input type="file" onchange="loadfile(this);" />
-                <canvas id="cvs" width="450" height="350" style="border:1px solid black;"></canvas>
+                <input type="file" onchange="loadfile2(this);" />
+                <canvas id="cvs2" width="450" height="350" style="border:1px solid black;"></canvas>
            </div>
 
        </div>

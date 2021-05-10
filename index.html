@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Direct</title>
+    <style src='./css/style-sheet.css'></style>
+    <script type="./js/image-io-manager.js"></script>
+    <script src="./js/draw-rectangle.js"></script>
+</head>
+
+<body onload="init();draw_rectangle_init();">
+    <!-- 外框 -->
+    <div class="content">
+        <!-- 第一條row -->
+        <div>
+            <!-- 左邊3文字 -->
+            <form class="text_box">
+                <p style="font-size: larger;">Brand: <input type="text" name="brand_txt" size="10" /></p>
+            </form>
+            <form class="text_box">
+                <p style="font-size: larger;">Product: <input type="text" name="product_tex" size="10" /></p>
+            </form>
+            <form class="text_box">
+                <p style="font-size: larger;">Shade: <input type="text" name="shade_txt" size="10" /></p>
+            </form>
+
+            <!-- 右邊3按鈕 -->
+            <button class="btn" id="btn_1">Select Tool</button>
+            <button class="btn">Save</button>
+            <button class="btn">Export and Clear</button>
+        </div>
+
+        <!-- 第二條row，左右分開 -->
+        <div style="position: relative;top: -30px;">
+            <!-- 左邊，按垂直分組 -->
+            <div style="width: 650px; display: inline-block; padding: 10px; margin: 10px;">
+                <!-- 文字 -->
+                <div style="display: inline-block;">
+                    <div style="padding: 10px;margin: 10px;position: relative;">
+                        Thickness:
+                    </div>
+                    <div style="padding: 10px;margin: 10px;">
+                        Click to </br>
+                        Select:
+                    </div>
+                    <div style="padding: 10px;margin: 10px;">
+                        RGB:
+                    </div>
+                </div>
+                <!-- circle 1 -->
+                <div class="box">
+                    <form class="text_box2"><input type="text" name="c1_txt" size="5" /></form>
+                    <div class="circle" id='circle1'></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 2 -->
+                <div class="box">
+                    <form class="text_box2"><input type="text" name="c2_txt" size="5" /></form>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 3 -->
+                <div class="box">
+                    <form class="text_box2"><input type="text" name="c3_txt" size="5" /></form>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 4 -->
+                <div class="box">
+                    <form class="text_box2"><input type="text" name="c4_txt" size="5" /></form>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 5 -->
+                <div class="box">
+                    <form class="text_box2"><input type="text" name="c5_txt" size="5" /></form>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+            </div>
+
+            <!-- 右邊，按垂直分組 -->
+            <div style="width: 560px; display: inline-block; padding: 10px; margin: 10px;">
+                <!-- circle 1 -->
+                <div class="box">
+                    <form class="text_box2"><input type="text" name="c6_txt" size="5" /></form>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 2 -->
+                <div class="box">
+                    <form class="text_box2"><input type="text" name="c7_txt" size="5" /></form>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 3 -->
+                <div class="box">
+                    <form class="text_box2"><input type="text" name="c8_txt" size="5" /></form>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 4 -->
+                <div class="box">
+                    <form class="text_box2"><input type="text" name="c9_txt" size="5" /></form>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+                <!-- circle 5 -->
+                <div class="box">
+                    <form class="text_box2"><input type="text" name="c10_txt" size="5" /></form>
+                    <div class="circle"></div>
+                    <div class="text_box2"><u>float</u></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 第三層，圖片 -->
+        <div style="position: relative;top: -50px;">
+            <div id="brush"></div>
+            <!-- 左圖 -->
+            <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 100px;">
+                <label>Import Black One</label>
+                <input type="file" name="a11" onchange="loadfile1(this);">
+                <canvas id="cvs1" width="450" height="350" style="border:1px solid black;"></canvas>
+            </div>
+
+            <!-- 右圖 -->
+            <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 20px;">
+                <label>Import White One</label>
+                <input type="file" onchange="loadfile2(this);" />
+                <canvas id="cvs2" width="450" height="350" style="border:1px solid black;"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

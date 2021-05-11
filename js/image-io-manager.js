@@ -9,8 +9,8 @@ function image_io_init() {
     var handler = function(e) {
             //var that = this;
         }
-        // btn1.addEventListener("click",handler);
-    console.log('image_io_manager module initialized')
+        // btn1.addEventListener("click",handler);  
+    console.log('image-io-manager module initialized')
 }
 
 function loadfile1(input) {

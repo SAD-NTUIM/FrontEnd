@@ -50,31 +50,31 @@
                 <!-- circle 1 -->
                 <div class="box">
                     <form class="text_box2"><input type="text" name="c1_txt" size="5" /></form>
-                    <div class="circle" id='circle1'></div>
+                    <div class="circle" id='1'></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 2 -->
                 <div class="box">
                     <form class="text_box2"><input type="text" name="c2_txt" size="5" /></form>
-                    <div class="circle"></div>
+                    <div class="circle" id="2"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 3 -->
                 <div class="box">
                     <form class="text_box2"><input type="text" name="c3_txt" size="5" /></form>
-                    <div class="circle"></div>
+                    <div class="circle" id="3"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 4 -->
                 <div class="box">
                     <form class="text_box2"><input type="text" name="c4_txt" size="5" /></form>
-                    <div class="circle"></div>
+                    <div class="circle" id="4"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 5 -->
                 <div class="box">
                     <form class="text_box2"><input type="text" name="c5_txt" size="5" /></form>
-                    <div class="circle"></div>
+                    <div class="circle" id="5"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
             </div>
@@ -84,31 +84,31 @@
                 <!-- circle 1 -->
                 <div class="box">
                     <form class="text_box2"><input type="text" name="c6_txt" size="5" /></form>
-                    <div class="circle"></div>
+                    <div class="circle" id="6"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 2 -->
                 <div class="box">
                     <form class="text_box2"><input type="text" name="c7_txt" size="5" /></form>
-                    <div class="circle"></div>
+                    <div class="circle" id="7"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 3 -->
                 <div class="box">
                     <form class="text_box2"><input type="text" name="c8_txt" size="5" /></form>
-                    <div class="circle"></div>
+                    <div class="circle" id="8"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 4 -->
                 <div class="box">
                     <form class="text_box2"><input type="text" name="c9_txt" size="5" /></form>
-                    <div class="circle"></div>
+                    <div class="circle" id="9"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
                 <!-- circle 5 -->
                 <div class="box">
                     <form class="text_box2"><input type="text" name="c10_txt" size="5" /></form>
-                    <div class="circle"></div>
+                    <div class="circle" id="10"></div>
                     <div class="text_box2"><u>float</u></div>
                 </div>
             </div>
@@ -116,19 +116,25 @@
 
         <!-- 第三層，圖片 -->
         <div style="position: relative;top: -50px;">
-            <div id="brush"></div>
             <!-- 左圖 -->
             <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 100px;">
                 <label>Import Black One</label>
                 <input type="file" name="a11" onchange="loadfile1(this);">
-                <canvas id="cvs1" width="450" height="350" style="border:1px solid black;"></canvas>
+                <div id="canvas-wrap">
+                    <canvas id="cvs1" width="450" height="350" style="border:1px solid black;"></canvas>
+                    <div id="brush"></div>
+                </div>
+
             </div>
 
             <!-- 右圖 -->
             <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 20px;">
                 <label>Import White One</label>
                 <input type="file" onchange="loadfile2(this);" />
-                <canvas id="cvs2" width="450" height="350" style="border:1px solid black;"></canvas>
+                <div id="canvas-wrap2">
+                    <canvas id="cvs2" width="450" height="350" style="border:1px solid black;"></canvas>
+                    <div id="brush2"></div>
+                </div>
             </div>
 
         </div>

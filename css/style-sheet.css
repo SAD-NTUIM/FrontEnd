@@ -26,6 +26,13 @@
     padding: 10px;
     margin: 10px;
 }
+
+.rgb_box { /* 中間文字 */
+    /* border: 3px solid grey; */
+    width: 45px;
+    padding: 10px;
+    margin: 10px;
+}
 .circle { /* 中間圓 */
     border: 3px solid grey;
     border-radius:50%;

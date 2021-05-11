@@ -1,5 +1,6 @@
 var canvas, canvas2, ctx, ctx2, rect, drag, brush, brush2;
-var circles, circle_index, last_time_bcircle, last_time_wcircle;
+var circles, circles_index, last_time_bcircle, last_time_wcircle;
+var rgb_boxes, rgb_boxes_index;
 
 function draw_rectangle_init() {
     // 初始化
@@ -18,9 +19,13 @@ function draw_rectangle_init() {
     circles.forEach(circle => {
         circle.addEventListener('click', selectCircle);
     });
-    circle_index = 0;
-    circles[circle_index].style.borderColor = 'pink';
-    circles[circle_index].style.borderWidth = '8px';
+    circles_index = 0;
+    circles[circles_index].style.borderColor = 'pink';
+    circles[circles_index].style.borderWidth = '8px';
+
+    rgb_boxes = document.getElementsByClassName('rgb_box');
+    rgb_boxes = Array.from(rgb_boxes);
+    rgb_boxes_index = circles_index;
 
 
     // 鍵盤選取圓圈監聽器
@@ -44,28 +49,29 @@ function draw_rectangle_init() {
 
 function selectCircle(e) {
     // 將原本的圓圈邊框顏色變回，並將選擇的圓圈邊框顏色改變
-    circles[circle_index].style.borderColor = 'grey';
-    circles[circle_index].style.borderWidth = '3px';
+    circles[circles_index].style.borderColor = 'grey';
+    circles[circles_index].style.borderWidth = '3px';
     if (e == 'Left') {
-        if (circle_index == 0) {
-            circle_index = 9;
+        if (circles_index == 0) {
+            circles_index = circles.length - 1;
         } else {
-            circle_index = (circle_index - 1) % 10;
+            circles_index = (circles_index - 1) % 10;
         }
-        circles[circle_index].style.borderColor = 'pink';
-        circles[circle_index].style.borderWidth = '8px';
+        circles[circles_index].style.borderColor = 'pink';
+        circles[circles_index].style.borderWidth = '8px';
         console.log('Select circle to the left!');
     } else if (e == 'Right') {
-        circle_index = (circle_index + 1) % 10;
-        circles[circle_index].style.borderColor = 'pink';
-        circles[circle_index].style.borderWidth = '8px';
+        circles_index = (circles_index + 1) % 10;
+        circles[circles_index].style.borderColor = 'pink';
+        circles[circles_index].style.borderWidth = '8px';
         console.log('Select circle to the right!');
     } else {
-        circle_index = Number(e.target.id) - 1;
+        circles_index = Number(e.target.id) - 1;
         e.target.style.borderColor = 'pink';
         e.target.style.borderWidth = '8px';
         console.log('Select circle by clicking!');
     }
+    rgb_boxes_index = circles_index;
 }
 
 function mouseDown(e) {
@@ -158,5 +164,7 @@ const calculateRGB = (target) => {
     console.log(`(${R}, ${G}, ${B})`);
 
     // 改變對應圓圈顏色
-    circles[circle_index].style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+    circles[circles_index].style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+    rgb_boxes[rgb_boxes_index].innerHTML = `${R}, ${G}, ${B}`;
+
 }

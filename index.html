@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/style-sheet.css">
     <script src="./js/image-io-manager.js"></script>
     <script src="./js/draw-rectangle.js"></script>
+    <script src="./js/data-manager.js"></script>
 </head>
 
 <body onload="image_io_init();draw_rectangle_init();">
@@ -25,7 +26,6 @@
             </form>
            
            <!-- 右邊3按鈕 -->            
-            <button class="btn" id="btn_1">Select Tool</button>           
             <button class="btn" onclick="saveAndClear()">Save</button>                       
             <button class="btn"onclick="exportAll()">Export and Clear</button>            
        </div>
@@ -50,32 +50,32 @@
              <!-- circle 1 -->
              <div class="box">
                  <form class="text_box2"><input id = "c1" type="text" size="5" value = ""/></form>
-                 <div class="circle"></div>
-                 <div class="text_box2"><u id = "rgb1">255, 222, 173</u></div>
+                 <div class="circle" id="1"></div>
+                 <div class="rgb_box" id = "rgb1">new, new, new</div>
              </div>
              <!-- circle 2 -->
              <div class="box">
                 <form class="text_box2"><input id = "c2" type="text" size="5" value = ""/></form>
-                <div class="circle"></div>
-                <div class="text_box2"><u id = "rgb2">255, 222, 173</u></div>
-             </div>
+                <div class="circle" id="2"></div>
+                <div class="rgb_box" id = "rgb2">new, new, new</div>
+            </div>
              <!-- circle 3 -->
              <div class="box">
                 <form class="text_box2"><input id = "c3" type="text" size="5" value = ""/></form>
-                <div class="circle"></div>
-                <div class="text_box2"><u  id = "rgb3">255, 222, 173</u></div>
+                <div class="circle" id="3"></div>
+                <div class="rgb_box" id = "rgb3">new, new, new</div>
              </div>
              <!-- circle 4 -->
              <div class="box">
                 <form class="text_box2"><input id = "c4" type="text" size="5" value = ""/></form>
-                <div class="circle"></div>
-                <div class="text_box2"><u  id = "rgb4">255, 222, 173</u></div>
+                <div class="circle" id="4"></div>
+                <div class="rgb_box" id = "rgb4">new, new, new</div>
              </div>
              <!-- circle 5 -->
              <div class="box">
                 <form class="text_box2"><input id = "c5" type="text" size="5" value = ""/></form>
-                <div class="circle"></div>
-                <div class="text_box2"><u  id = "rgb5">255, 222, 173</u></div>
+                <div class="circle" id="5"></div>
+                <div class="rgb_box" id = "rgb5">new, new, new</div>
              </div>           
            </div>
 
@@ -83,28 +83,28 @@
             <div style="width: 560px; display: inline-block; padding: 10px; margin: 10px;">
                 <!-- circle 1 -->
                 <div class="box">
-                    <div class="circle"></div>
-                    <div class="text_box2"><u  id = "rgb6">255, 222, 173</u></div>
+                    <div class="circle" id="6"></div>
+                    <div class="rgb_box" id = "rgb6">new, new, new</div>
                 </div>
                 <!-- circle 2 -->
                 <div class="box">
-                    <div class="circle"></div>
-                    <div class="text_box2"><u  id = "rgb7">255, 222, 173</u></div>
+                    <div class="circle" id="7"></div>
+                    <div class="rgb_box" id = "rgb7">new, new, new</div>
                 </div>
                 <!-- circle 3 -->
                 <div class="box">
-                    <div class="circle"></div>
-                    <div class="text_box2"><u  id = "rgb8">255, 222, 173</u></div>
+                    <div class="circle" id="8"></div>
+                    <div class="rgb_box" id = "rgb8">new, new, new</div>
                 </div>
                 <!-- circle 4 -->
                 <div class="box">
-                    <div class="circle"></div>
-                    <div class="text_box2"><u  id = "rgb9">255, 222, 173</u></div>
+                    <div class="circle" id="9"></div>
+                    <div class="rgb_box" id = "rgb9">new, new, new</div>
                 </div>
                 <!-- circle 5 -->
                 <div class="box">
-                    <div class="circle"></div>
-                    <div class="text_box2"><u  id = "rgb10">255, 222, 173</u></div>
+                    <div class="circle" id="10"></div>
+                    <div class="rgb_box" id = "rgb10">new, new, new</div>
                 </div>
            </div>
        </div>
@@ -115,14 +115,20 @@
            <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 100px;">
                 <label>Import Black One</label>
                 <input type="file" name="a11" onchange="loadfile1(this);">   
-                <canvas id="cvs1" width="450" height="300" style="border:1px solid black;"></canvas>
+                <div id='canvas-wrap'>
+                    <canvas id="cvs1" width="450" height="300" style="border:1px solid black;"></canvas>
+                    <div id='brush'></div>
+                </div>
            </div>
 
            <!-- 右圖 -->
            <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 20px;">
                 <label>Import White One</label>
                 <input type="file" onchange="loadfile2(this);" />
-                <canvas id="cvs2" width="450" height="300" style="border:1px solid black;"></canvas>
+                <div id='canvas-wrap2'>
+                    <canvas id="cvs2" width="450" height="300" style="border:1px solid black;"></canvas>
+                    <div id='brush2'></div>
+                </div>
            </div>
 
        </div>

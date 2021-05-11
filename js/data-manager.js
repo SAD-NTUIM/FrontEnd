@@ -1,16 +1,23 @@
 var text = [["Brand", "Product", "Shade", "Thickness", "", "Black", "", "", "White", ""]];
 
 function clearNotAll () {
+    var canvas = document.getElementById('cvs1');
+    var canvas2 = document.getElementById('cvs2');
+    var ctx = canvas.getContext('2d');
+    var ctx2 = canvas2.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+    
     for(var i = 1; i <= 5; i++){
         ID = "c" + i;
         document.getElementById(ID).value = "";                
         ID = "rgb" + i;
-        document.getElementById(ID).innerHTML = "255, 222, 173";
+        document.getElementById(ID).innerHTML = "new, new, new";
     }
     //clear thickness, rgb-black, rgb-white
     for (var i = 6; i <= 10; i++) {
         ID = "rgb" + i;
-        document.getElementById(ID).innerHTML = "255, 222, 173";
+        document.getElementById(ID).innerHTML = "new, new, new";
     }  
 }
 

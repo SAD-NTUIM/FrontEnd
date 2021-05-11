@@ -19,7 +19,7 @@ function loadfile1(input) {
     var img = new Image();
     img.src = src;
     img.onload = function() { //載入影像
-        ctx1.drawImage(this, 0, 0, 450, 450)
+        ctx1.drawImage(this, 0, 0, 450, 450 * this.height / this.width)
     }
 }
 
@@ -29,10 +29,6 @@ function loadfile2(input) {
     var img = new Image();
     img.src = src;
     img.onload = function() { //載入影像
-        ctx2.drawImage(this, 0, 0, 450, 450)
+        ctx2.drawImage(this, 0, 0, 450, 450 * this.height / this.width)
     }
-}
-
-function clearall() {
-    cvs.height = cvs.height;
 }

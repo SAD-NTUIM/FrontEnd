@@ -1,5 +1,4 @@
-.content {
-    /* 大外框 */
+.content { /* 大外框 */
     /*1300x700*/
     width: 1300px;
     border: 1px solid grey;
@@ -8,15 +7,12 @@
     margin-right: auto;
 }
 
-.box {
-    /* 中間小列 */
+.box { /* 中間小列 */
     /* padding: 10px; */
     margin: 5px;
     display: inline-block;
 }
-
-.text_box {
-    /* 最上文字 */
+.text_box { /* 最上文字 */
     /* border: 3px solid grey;
     border-radius:10px; */
     width: 180px;
@@ -24,19 +20,15 @@
     margin: 10px;
     display: inline-block;
 }
-
-.text_box2 {
-    /* 中間文字 */
+.text_box2 { /* 中間文字 */
     /* border: 3px solid grey; */
     width: 45px;
     padding: 10px;
     margin: 10px;
 }
-
-.circle {
-    /* 中間圓 */
+.circle { /* 中間圓 */
     border: 3px solid grey;
-    border-radius: 50%;
+    border-radius:50%;
     padding: 10px;
     margin: 10px;
     width: 35px;
@@ -45,10 +37,8 @@
     /* position: relative;
     top: 20px; */
 }
-
-.btn {
-    /* 按鈕 */
-    border-radius: 10px;
+.btn { /* 按鈕 */
+    border-radius:10px;
     width: 130px;
     padding: 10px;
     margin: 30px;

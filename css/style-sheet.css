@@ -1,0 +1,86 @@
+.content { /* 大外框 */
+    /*1300x700*/
+    width: 1300px;
+    border: 1px solid grey;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box { /* 中間小列 */
+    /* padding: 10px; */
+    margin: 5px;
+    display: inline-block;
+}
+.text_box { /* 最上文字 */
+    /* border: 3px solid grey;
+    border-radius:10px; */
+    width: 180px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+.text_box2 { /* 中間文字 */
+    /* border: 3px solid grey; */
+    width: 45px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.rgb_box { /* 中間文字 */
+    /* border: 3px solid grey; */
+    width: 45px;
+    padding: 10px;
+    margin: 10px;
+}
+.circle { /* 中間圓 */
+    border: 3px solid grey;
+    border-radius:50%;
+    padding: 10px;
+    margin: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: grey;
+    /* position: relative;
+    top: 20px; */
+}
+.btn { /* 按鈕 */
+    border-radius:10px;
+    width: 130px;
+    padding: 10px;
+    margin: 30px;
+    /* margin-top: 50px;
+    margin-left: 50px; */
+    display: inline-block;
+}
+
+#brush {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 50px;
+    height: 50px;
+    border-style: dotted;
+}
+
+#brush2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 50px;
+    height: 50px;
+    border-style: dotted;
+}
+
+
+/* Make this a positioned parent */
+
+#canvas-wrap {
+    position: relative
+}
+
+#canvas-wrap2 {
+    position: relative
+}

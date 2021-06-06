@@ -33,7 +33,9 @@ function CR2toJpg_api(cvs, src) {
         }     
     }
     xhr.onerror= () =>{
-        alert("Failed!");
+        // alert("Failed.");
+        alert("請將圖片存於指定資料夾(資料夾名稱：img)");
+        // alert("Please import CR2 file.");
     };
     
     xhr.open("POST", url); 
@@ -128,6 +130,9 @@ function whiteBalance_api(cvs, src, pos_x, pos_y) {
             }
         }       
     }    
+    xhr.onerror= () =>{
+        alert("Failed");
+    };
     xhr.open("POST", url); 
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(data);

@@ -7,9 +7,9 @@
     <script src="./js/image-io-manager.js"></script>
     <script src="./js/draw-rectangle.js"></script>
     <script src="./js/data-manager.js"></script>
+    <script src="./js/api_calls.js"></script>
 </head>
-
-<body onload="image_io_init();draw_rectangle_init();">
+<body onload="image_io_init();draw_rectangle_init()">
      <!-- 外框 -->
      <div class="content">  
         <!-- 第一條row -->
@@ -27,21 +27,21 @@
            
            <!-- 右邊3按鈕 -->            
             <button class="btn" onclick="saveAndClear()">Save</button>                       
-            <button class="btn"onclick="exportAll()">Export and Clear</button>            
-       </div>
+            <button class="btn" onclick="exportAll()">Export and Clear</button>            
+            <label/ id = "coordinate" style="font-size: larger; color:rgb(252, 153, 153)"><lable>
+        </div>
 
        <!-- 第二條row，左右分開 -->      
        <div style="position: relative;top: -30px;">
            <!-- 左邊，按垂直分組 -->
-           <div style="width: 650px; display: inline-block; padding: 10px; margin: 10px;">
+           <div style="width: 1100px; display: inline-block; padding: 10px; margin: 10px;">
              <!-- 文字 -->
              <div style="display: inline-block;position: relative;top:-45px">
                  <div style="padding: 10px;margin: 10px;position: relative;">
                      Thickness:
                  </div>
                  <div style="padding: 10px;margin: 10px;">
-                     Click to </br>
-                     Select:
+                    </br></br>
                  </div>
                  <div style="padding: 10px;margin: 10px;">
                      RGB:
@@ -80,7 +80,7 @@
            </div>
 
             <!-- 右邊，按垂直分組 -->
-            <div style="width: 560px; display: inline-block; padding: 10px; margin: 10px;">
+            <div style="width: 700px; display: inline-block; padding: 10px; margin: 10px;">
                 <!-- circle 1 -->
                 <div class="box">
                     <div class="circle" id="6"></div>
@@ -112,21 +112,25 @@
        <!-- 第三層，圖片 -->
        <div style="position: relative;top: -50px;left:-30px">
            <!-- 左圖 -->
-           <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 100px;">
+           <div style="width: 1050px; display: inline-block; padding: 10px; margin-left: 100px;">
                 <label>Import Black One</label>
-                <input type="file" name="a11" onchange="loadfile1(this);">   
+                <input type="file" id="img1" oninput="loadfile1(this);">   
+                <label id = "processMessage1" style="font-size: larger; color:rgb(0, 22, 145)"></label>
+                <!-- 相片尺寸: 5184 × 3456 (px), 伸縮0.2倍: 1036.8 × 691.2 (px) -->
                 <div id='canvas-wrap'>
-                    <canvas id="cvs1" width="450" height="300" style="border:1px solid black;"></canvas>
+                    <canvas id="cvs1" width="1036.8" height="691.2" style="border:1px solid black;"></canvas>
                     <div id='brush'></div>
                 </div>
            </div>
 
            <!-- 右圖 -->
-           <div style="width: 560px; display: inline-block; padding: 10px; margin-left: 20px;">
+           <div style="width: 1050px; display: inline-block; padding: 10px; margin-left: 20px;">
                 <label>Import White One</label>
-                <input type="file" onchange="loadfile2(this);" />
+                <input type="file" id="img2" oninput="loadfile2(this);" />
+                <label id = "processMessage2" style="font-size: larger; color:rgb(0, 22, 145)"></label>
+                <!-- 相片尺寸: 5184 × 3456 (px), 伸縮0.2倍: 1036.8 × 691.2 (px) -->
                 <div id='canvas-wrap2'>
-                    <canvas id="cvs2" width="450" height="300" style="border:1px solid black;"></canvas>
+                    <canvas id="cvs2" width="1036.8" height="691.2" style="border:1px solid black;"></canvas> 
                     <div id='brush2'></div>
                 </div>
            </div>

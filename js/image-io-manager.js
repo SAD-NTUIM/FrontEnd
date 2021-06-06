@@ -1,34 +1,31 @@
-var ctx1, ctx2, btn1;
+var filename1, filename2;
 
 function image_io_init() {
-    btn1 = document.getElementById("btn_1");
-    cvs = document.getElementById("cvs"); //畫布
-    ctx1 = cvs1.getContext("2d"); //畫布內容左
-    ctx2 = cvs2.getContext("2d"); //畫布內容左
-    // 事件物件
-    var handler = function(e) {
-            //var that = this;
-        }
-        // btn1.addEventListener("click",handler);  
-    console.log('image-io-manager module initialized')
+    canvas = document.getElementById('cvs1'),
+    canvas2 = document.getElementById('cvs2'),
+    ctx = canvas.getContext('2d'),
+    ctx2 = canvas2.getContext('2d'),
+    console.log('image-io-manager module initialized');
 }
 
 function loadfile1(input) {
-    var file = input.files[0]; //獲取檔案
-    var src = URL.createObjectURL(file); //把檔案換成可用的網址
-    var img = new Image();
-    img.src = src;
-    img.onload = function() { //載入影像
-        ctx1.drawImage(this, 0, 0, 450, 450 * this.height / this.width)
-    }
+    document.getElementById("processMessage1").innerHTML = "";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var file_d = input.files[0]; 
+    filename1 = file_d["name"];
+    console.log("filename: ", filename1);
+    document.getElementById("processMessage1").innerHTML = "processing...";
+    CR2toJpg_api(0, filename1);
+
 }
 
 function loadfile2(input) {
-    var file = input.files[0]; //獲取檔案
-    var src = URL.createObjectURL(file); //把檔案換成可用的網址
-    var img = new Image();
-    img.src = src;
-    img.onload = function() { //載入影像
-        ctx2.drawImage(this, 0, 0, 450, 450 * this.height / this.width)
-    }
+    document.getElementById("processMessage2").innerHTML = "";
+    ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+    var file_d = input.files[0]; 
+    filename2 = file_d["name"];
+    console.log("filename: ", filename2);
+    document.getElementById("processMessage2").innerHTML = "processing...";
+    CR2toJpg_api(1, filename2);
 }
+

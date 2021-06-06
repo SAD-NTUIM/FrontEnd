@@ -2,16 +2,12 @@ var canvas, canvas2, ctx, ctx2, rect, drag, brush, brush2;
 var circles, circles_index, last_time_bcircle, last_time_wcircle;
 var rgb_boxes, rgb_boxes_index;
 
-function draw_rectangle_init() {
-    // 初始化
-    canvas = document.getElementById('cvs1'),
-        canvas2 = document.getElementById('cvs2'),
-        ctx = canvas.getContext('2d'),
-        ctx2 = canvas2.getContext('2d'),
-        rect = {},
-        drag = false,
-        brush = document.getElementById('brush'),
-        brush2 = document.getElementById('brush2'); // 選取框框
+function draw_rectangle_init() { 
+
+    rect = {},
+    drag = false,
+    brush = document.getElementById('brush'),
+    brush2 = document.getElementById('brush2'); // 選取框框
 
     circles = document.getElementsByClassName('circle');
     circles = Array.from(circles);
@@ -76,8 +72,6 @@ function selectCircle(e) {
 
 function mouseDown(e) {
     // 當滑鼠按下，紀錄滑鼠座標當作框框的起始座標
-    //rect.startX = e.pageX - canvas.offsetLeft;
-    //rect.startY = e.pageY - canvas.offsetTop;
     rect.startX = e.offsetX;
     rect.startY = e.offsetY;
 
@@ -93,14 +87,10 @@ function mouseUp(e) {
 function mouseMove(e) {
     if (drag) {
         // 當拖曳，紀錄座標當作框框的高寬
-        // rect.w = (e.pageX - this.offsetLeft) - rect.startX;
-        // rect.h = (e.pageY - this.offsetTop) - rect.startY;
         rect.w = e.offsetX - rect.startX;
         rect.h = e.offsetY - rect.startY;
-        // ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         draw(e.target);
-
     }
 }
 
@@ -160,11 +150,15 @@ const calculateRGB = (target) => {
     G = G / pixelsPerChannel | 0;
     B = B / pixelsPerChannel | 0;
 
-    console.log(`(R, G, B)`);
-    console.log(`(${R}, ${G}, ${B})`);
 
     // 改變對應圓圈顏色
     circles[circles_index].style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
-    rgb_boxes[rgb_boxes_index].innerHTML = `${R}, ${G}, ${B}`;
+    var rgb_value = `00${R}`.slice(-3);
+    rgb_value += `, `
+    rgb_value +=`00${G}`.slice(-3);
+    rgb_value += `, `
+    rgb_value +=`00${B}`.slice(-3);
+
+    rgb_boxes[rgb_boxes_index].innerHTML = rgb_value;
 
 }

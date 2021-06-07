@@ -23,19 +23,19 @@ function CR2toJpg_api(cvs, src) {
             img.onload = function() { 
                 if (cvs == 0){
                     ctx.drawImage(this, 0, 0, canvas.width, canvas.width * this.height / this.width)
-                    document.getElementById("processMessage1").innerHTML = "Move the mouse on the standard point, and press W to do white balance.";
+                    document.getElementById("processMessage1").innerHTML = "請將滑鼠移至圖片上的基準點，按W進行白平衡";
                 }
                 else{
                     ctx2.drawImage(this, 0, 0, canvas2.width, canvas2.width * this.height / this.width)
-                    document.getElementById("processMessage2").innerHTML = "Move the mouse on the standard point, and press W to do white balance.";
+                    document.getElementById("processMessage2").innerHTML = "請將滑鼠移至圖片上的基準點，按W進行白平衡";
                 }
             }
         }     
     }
     xhr.onerror= () =>{
-        // alert("Failed.");
+        // alert("失敗");
         alert("請將圖片存於指定資料夾(資料夾名稱：img)");
-        // alert("Please import CR2 file.");
+        // alert("請匯入raw檔");
     };
     
     xhr.open("POST", url); 
@@ -88,13 +88,13 @@ function wb_interface(){
     console.log(cur_filename);
 
     if(cur_ctx == -1){
-        alert("The mouse is out of the canvases.");
+        alert("請將滑鼠移至畫框內");
     }
     else if(cur_filename == null){
-        alert("Please import images first.");
+        alert("請先匯入圖片");
     }
     else{
-        document.getElementById("processMessage" +(cur_ctx + 1)).innerHTML = "white balance processing...";
+        document.getElementById("processMessage" +(cur_ctx + 1)).innerHTML = "白平衡中...";
         whiteBalance_api(cur_ctx, cur_filename, pos_x*img_ratio, pos_y*img_ratio);
     }
 }
@@ -121,17 +121,17 @@ function whiteBalance_api(cvs, src, pos_x, pos_y) {
             img.onload = function() {
                 if (cvs == 0){
                     ctx.drawImage(img, 0, 0, canvas.width, canvas.width * this.height / this.width)
-                    document.getElementById("processMessage1").innerHTML = "Already adjusted to LAB(79, 0, 0)!";
+                    document.getElementById("processMessage1").innerHTML = "已完成白平衡!";
                 }
                 else{
                     ctx2.drawImage(img, 0, 0, canvas2.width, canvas2.width * this.height / this.width)
-                    document.getElementById("processMessage2").innerHTML = "Already adjusted to LAB(79, 0, 0)!";
+                    document.getElementById("processMessage2").innerHTML = "已完成白平衡!";
                 }
             }
         }       
     }    
     xhr.onerror= () =>{
-        alert("Failed");
+        alert("失敗");
     };
     xhr.open("POST", url); 
     xhr.setRequestHeader("Content-Type", "application/json");
